@@ -1,0 +1,31 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- azure-frontend-deployment
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo testing the auto run
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+  
+- task: AzureStaticWebApp@0
+  inputs:
+    # Commented code used for prp swa
+    #app_location: '/frontend'
+    #output_location: '/'
+    app_location: '/'
+    output_location: 'dist'
+    azure_static_web_apps_api_token: $(Static-Web-App-Token)
+    skip_app_build: true
+
