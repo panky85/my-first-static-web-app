@@ -1,11 +1,13 @@
 name: Scheduled Playwright tests
 
 # Controls when the workflow will run
-on:
-  # Triggers the workflow nightly
-  schedule: 
-    # nightly
-    - cron: '0 0 * * *'
+# on:
+#   # Triggers the workflow nightly
+#   schedule: 
+#     # nightly
+#     - cron: '0 0 * * *'
+
+workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
